@@ -2,11 +2,12 @@
 Paper list for "From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms".
 
 ## 📖 Introduction
-While memory mechanisms have emerged as the architectural cornerstone of LLM agents, current research remains fragmented, oscillating between operating system engineering and cognitive science. This divide prevents a unified view of technological synthesis and a coherent evolutionary perspective.Furthermore, we focus on the key technologies of LLM Agent Memory and define their positions within the evolution path.
+While memory mechanisms have emerged as the architectural cornerstone of LLM agents, current research remains fragmented, oscillating between operating system engineering and cognitive science. This theoretical divide prevents a unified view of technological synthesis and a coherent evolutionary perspective. To bridge this gap, this repository maintains the paper list for our survey: [**"From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms"**](https://www.preprints.org/manuscript/202601.0618). We propose a novel **Evolutionary Framework** that formalizes the development of LLM agent memory into three distinct stages:
+1. 💾 **Storage** (Trajectory Preservation)
+2. 🧠 **Reflection** (Trajectory Refinement)
+3. 🌟 **Experience** (Trajectory Abstraction)
 
-To bridge this gap, this repository maintains the paper list for our survey "From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms". We propose a novel evolutionary framework that formalizes the development of LLM agents memory into three distinct stages.
-
-This project aims to offer a unified roadmap to help the community architect next-generation LLM Agent Memory systems.
+By focusing on these pivotal technologies and their positions within the evolution path, this project aims to offer a unified roadmap to help the community research and design next-generation LLM Agent Memory systems.
 
 ## 🛤️ Evolution Path
 1. 💾 Storage (Trajectory Preservation): Focusing on the complete preservation and basic retrieval of raw interaction traces.
