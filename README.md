@@ -17,6 +17,10 @@ Before diving into the evolution of memory mechanisms, we first establish the st
 During each task execution cycle, the Agent leverages two core capabilities:
 1. **Memory Read**: The Agent actively retrieves relevant knowledge from the memory bank to supplement the current context.
 2. **Memory Write**: As the task progresses, the generated interaction sequences are recorded as historical trajectories and are written into the memory system in real-time.
+
+Building upon this foundation, we conceptualize the memory mechanism as an evolutionary pathway. This framework is structured into three distinct stages, where each stage is further categorized into three representative paradigms based on their core characteristics.
+💾 **Storage** :
+
 ## 📜 PaperList
 ### 💾 Storage
 ### 🧠 Reflection
