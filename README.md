@@ -11,6 +11,7 @@ By focusing on these pivotal technologies and their positions within the evoluti
 
 ## 🛤️ Evolution Path
 ![Evolution Path](./figures/figure1.PNG)
+<p align="center"><i>Figure 1: The Evolutionary path of LLM Agent Memory.</i></p>
 ## 📜 PaperList
 ### 💾 Storage
 ### 🧠 Reflection
