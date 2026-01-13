@@ -15,12 +15,17 @@ By focusing on these pivotal technologies and their positions within the evoluti
 
 Before diving into the evolution of memory mechanisms, we first establish the standard workflow for an LLM Agent integrated with memory. Taking the classic ReAct paradigm as an example, the Agent's decision-making process forms a dynamic closed loop enabled by memory.
 During each task execution cycle, the Agent leverages two core capabilities:
-1. **Memory Read**: The Agent actively retrieves relevant knowledge from the memory bank to supplement the current context.
-2. **Memory Write**: As the task progresses, the generated interaction sequences are recorded as historical trajectories and are written into the memory system in real-time.
+1. **Memory Read:** The Agent actively retrieves relevant knowledge from the memory bank to supplement the current context.
+2. **Memory Write:** As the task progresses, the generated interaction sequences are recorded as historical trajectories and are written into the memory system in real-time.
 
 Building upon this foundation, we conceptualize the memory mechanism as an evolutionary pathway. This framework is structured into three distinct stages, where each stage is further categorized into three representative paradigms based on their core characteristics.
-💾 **Storage** :
 
+💾 **Storage** 
+1. **Linear Storage**
+     **Characteristics：** Linear storage treats interaction history as a token stream strictly ordered chronologically.
+     **Primary Research Directions:** Expanding memory storage capacity through context window adaptation and information sparsification.
+     **Advantages:** Minimal information loss and maximal logical completeness.
+     **Limitations:** While ensuring coherence within recent context, early critical information is irreversibly forgotten.
 ## 📜 PaperList
 ### 💾 Storage
 ### 🧠 Reflection
