@@ -21,6 +21,7 @@ During each task execution cycle, the Agent leverages two core capabilities:
 Building upon this foundation, we conceptualize the memory mechanism as an evolutionary pathway. This framework is structured into three distinct stages, where each stage is further categorized into three representative paradigms based on their core characteristics.
 
 💾 **Storage** 
+Storage serves as the cornerstone of memory evolution, emphasizing the faithful preservation of interaction history. Based on differences in data organization structures, we categorize existing storage mechanisms into the following three types:
 1. **Linear Storage**  
      - **Characteristics：** Linear storage treats interaction history as a token stream strictly ordered chronologically.  
      - **Primary Research Directions:** Expanding memory storage capacity through context window adaptation and information sparsification.  
