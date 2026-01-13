@@ -10,7 +10,7 @@ While memory mechanisms have emerged as the architectural cornerstone of LLM age
 By focusing on these pivotal technologies and their positions within the evolution path, this project aims to offer a unified roadmap to help the community research and design next-generation LLM Agent Memory systems.
 
 ## 🛤️ Evolution Path
-！[Evolution Path](./figures/figure1.PNG)
+![Evolution Path](./figures/figure1.PNG)
 ## 📜 PaperList
 ### 💾 Storage
 ### 🧠 Reflection
