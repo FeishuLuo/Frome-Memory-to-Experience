@@ -16,7 +16,7 @@ By focusing on these pivotal technologies and their positions within the evoluti
 Before diving into the evolution of memory mechanisms, we first establish the standard workflow for an LLM Agent integrated with memory. Taking the classic ReAct paradigm as an example, the Agent's decision-making process forms a dynamic closed loop enabled by memory.
 During each task execution cycle, the Agent leverages two core capabilities:
 1.**Memory Read**: The Agent actively retrieves relevant knowledge from the memory bank to supplement the current context.
-2.**Memory Write**: As the task progresses, the generated interaction sequences are defined as historical trajectories and are written into the memory system in real-time.
+2.**Memory Write**: As the task progresses, the generated interaction sequences are recorded as historical trajectories and are written into the memory system in real-time.
 ## 📜 PaperList
 ### 💾 Storage
 ### 🧠 Reflection
