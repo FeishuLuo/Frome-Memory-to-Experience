@@ -21,11 +21,11 @@ During each task execution cycle, the Agent leverages two core capabilities:
 Building upon this foundation, we conceptualize the memory mechanism as an evolutionary pathway. This framework is structured into three distinct stages, where each stage is further categorized into three representative paradigms based on their core characteristics.
 
 💾 **Storage** 
-1. **Linear Storage**
-     **Characteristics：** Linear storage treats interaction history as a token stream strictly ordered chronologically.
-     **Primary Research Directions:** Expanding memory storage capacity through context window adaptation and information sparsification.
-     **Advantages:** Minimal information loss and maximal logical completeness.
-     **Limitations:** While ensuring coherence within recent context, early critical information is irreversibly forgotten.
+1. **Linear Storage**  
+     **Characteristics：** Linear storage treats interaction history as a token stream strictly ordered chronologically.  
+     **Primary Research Directions:** Expanding memory storage capacity through context window adaptation and information sparsification.  
+     **Advantages:** Minimal information loss and maximal logical completeness.  
+     **Limitations:** While ensuring coherence within recent context, early critical information is irreversibly forgotten.  
 ## 📜 PaperList
 ### 💾 Storage
 ### 🧠 Reflection
