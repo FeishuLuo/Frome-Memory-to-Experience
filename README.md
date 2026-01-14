@@ -26,7 +26,12 @@ Storage serves as the cornerstone of memory evolution, emphasizing the faithful 
      - **Characteristics：** Linear storage treats interaction history as a token stream strictly ordered chronologically.  
      - **Primary Research Directions:** Expanding memory storage capacity through context window adaptation and information sparsification.  
      - **Advantages:** Minimal information loss and maximal logical completeness.  
-     - **Limitations:** While ensuring coherence within recent context, early critical information is irreversibly forgotten.  
+     - **Limitations:** While ensuring coherence within recent context, early critical information is irreversibly forgotten.
+2. **Vector Storage**
+     - **Characteristics：** Vector storage encodes interaction trajectories into high-dimensional embedding space.  
+     - **Primary Research Directions:** Optimizing retrieval strategies through semantic proximity matching and multi-dimensional weighted scoring that incorporates temporal decay and importance metrics.  
+     - **Advantages:** Minimal information loss and maximal logical completeness.  
+     - **Limitations:** While ensuring coherence within recent context, early critical information is irreversibly forgotten.
 ## 📜 PaperList
 ### 💾 Storage
 ### 🧠 Reflection
