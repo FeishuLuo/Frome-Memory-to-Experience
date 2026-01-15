@@ -50,6 +50,14 @@ The Reflection stage transforms memory from passive recording to active evaluati
      - **Primary Research Directions:** Error rectification through self-critique, dynamic lifecycle management of memory content, and knowledge compression via multi-granularity abstraction.  
      - **Advantages:** Interaction trajectories refined based on facts exhibit greater adaptability to dynamic environments.  
      - **Limitations:** Sparse reward settings and ambiguous execution environments lead to implementation difficulties.
+3. **Coordination**  
+     - **Characteristics：** Extends reflection to multi-agent collectives by leveraging role specialization and consensus mechanisms.  
+     - **Primary Research Directions:** Facilitates the reflection of memory through the construction of societies of heterogeneous agents.  
+     - **Advantages:** Reduced hallucination risks and enriched memory perspectives.  
+     - **Limitations:** Introduces additional communication overhead and potential memory conflicts across agents.  
+
+🌟 **Experience**
+Experience represents the highest cognitive layer, where memory mechanisms compress redundant trajectories into transferable heuristic wisdom through cross-trajectory abstraction. Based on the form of experience representation, we categorize this stage into three paradigms.
 
 ## 📜 PaperList
 ### 💾 Storage
