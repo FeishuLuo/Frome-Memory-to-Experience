@@ -30,8 +30,8 @@ Storage serves as the cornerstone of memory evolution, emphasizing the faithful 
 2. **Vector Storage**
      - **Characteristics：** Vector storage encodes interaction trajectories into high-dimensional embedding space.  
      - **Primary Research Directions:** Optimizing retrieval strategies through semantic proximity matching and multi-dimensional weighted scoring that incorporates temporal decay and importance metrics.  
-     - **Advantages:** Minimal information loss and maximal logical completeness.  
-     - **Limitations:** While ensuring coherence within recent context, early critical information is irreversibly forgotten.
+     - **Advantages:** Massive storage capacity.  
+     - **Limitations:** High retrieval difficulty and limited memory relevance.
 ## 📜 PaperList
 ### 💾 Storage
 ### 🧠 Reflection
