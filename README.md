@@ -70,7 +70,7 @@ Experience represents the highest cognitive layer, where memory mechanisms compr
      - **Limitations:** Reduced interpretability, high update costs, and the risk of catastrophic forgetting.
 3. **Hybrid**
      - **Characteristics：** Hybrid experience establishes a dynamic "accumulate–internalize" cycle, treating explicit experience as a high-capacity cache that is periodically compressed and transferred into implicit model weights.  
-     - **Primary Research Directions:** Experience transfer mechanisms that progressively internalize explicit knowledge repositories through gradient-based updates, combining the interpretability benefits of explicit storage with the efficiency of parameter internalization. 
+     - **Primary Research Directions:** Experience transfer mechanisms that progressively internalize explicit experience repositories through gradient-based updates, combining the interpretability benefits of explicit storage with the efficiency of parameter internalization. 
      - **Advantages:** Balances interpretability with inference efficiency and restricts unbounded memory growth.  
      - **Limitations:** Requires coordination of accumulation and internalization cycles and control of transfer criteria, with potential knowledge degradation during conversion.
 
