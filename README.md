@@ -36,8 +36,15 @@ Storage serves as the cornerstone of memory evolution, emphasizing the faithful 
      - **Characteristics：** Structured storage utilizes predefined relational structures to preserve interaction trajectories.  
      - **Primary Research Directions:** Leveraging tabular formats for structured queries, implementing tiered memory hierarchies to balance capacity and access speed, and modeling interaction history as topological networks of entities and relations.  
      - **Advantages:** Supports precise operations, logical reasoning, and efficient multi-hop retrieval across structured relationships.  
-     - **Limitations:** Requires schema maintenance and lacks flexibility when handling massive interaction trajectories.
+     - **Limitations:** Requires schema maintenance and lacks flexibility when handling massive interaction trajectories.  
 
+🧠 **Reflection**
+The Reflection stage transforms memory from passive recording to active evaluation, utilizing feedback signals to refine memory by correcting errors and reducing noise. Based on the source of reflection signals, we categorize mechanisms into three types.
+1. **Introspection**  
+     - **Characteristics：** Leverages the LLM agent's internal knowledge to autonomously evaluate and restructure memory.  
+     - **Primary Research Directions:** Error rectification through self-critique, dynamic lifecycle management of memory content, and knowledge compression via multi-granularity abstraction.  
+     - **Advantages:** Achieves trajectory-level error correction and integration without the need for external feedback.  
+     - **Limitations:** Inherent risk of reinforcing model biases or hallucinations.
 
 ## 📜 PaperList
 ### 💾 Storage
