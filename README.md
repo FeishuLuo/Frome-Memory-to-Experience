@@ -45,6 +45,11 @@ The Reflection stage transforms memory from passive recording to active evaluati
      - **Primary Research Directions:** Error rectification through self-critique, dynamic lifecycle management of memory content, and knowledge compression via multi-granularity abstraction.  
      - **Advantages:** Achieves trajectory-level error correction and integration without the need for external feedback.  
      - **Limitations:** Inherent risk of reinforcing model biases or hallucinations.
+2. **Environment**  
+     - **Characteristics：** Utilizes real-world execution outcomes or environmental feedback as signals for memory refinement.  
+     - **Primary Research Directions:** Error rectification through self-critique, dynamic lifecycle management of memory content, and knowledge compression via multi-granularity abstraction.  
+     - **Advantages:** Interaction trajectories refined based on facts exhibit greater adaptability to dynamic environments.  
+     - **Limitations:** Sparse reward settings and ambiguous execution environments lead to implementation difficulties.
 
 ## 📜 PaperList
 ### 💾 Storage
