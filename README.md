@@ -35,8 +35,8 @@ Storage serves as the cornerstone of memory evolution, emphasizing the faithful 
 3. **Structured Storage**
      - **Characteristics：** Structured storage utilizes predefined relational structures to preserve interaction trajectories.  
      - **Primary Research Directions:** Leveraging tabular formats for structured queries, implementing tiered memory hierarchies to balance capacity and access speed, and modeling interaction history as topological networks of entities and relations.  
-     - **Advantages:** Supports precise operations, complex logical reasoning, and efficient multi-hop retrieval across structured relationships.  
-     - **Limitations:** Requires schema maintenance based on actual conditions and lacks flexibility when handling massive interaction trajectories.
+     - **Advantages:** Supports precise operations, logical reasoning, and efficient multi-hop retrieval across structured relationships.  
+     - **Limitations:** Requires schema maintenance and lacks flexibility when handling massive interaction trajectories.
 
 
 ## 📜 PaperList
