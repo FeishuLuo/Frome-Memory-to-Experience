@@ -57,7 +57,7 @@ The Reflection stage transforms memory from passive recording to active evaluati
      - **Limitations:** Introduces additional communication overhead and potential memory conflicts across agents.  
 
 🌟 **Experience**
-Experience represents the highest cognitive layer, where memory mechanisms compress redundant trajectories into transferable heuristic wisdom through cross-trajectory abstraction. Based on the form of experience representation, we categorize this stage into three paradigms.
+Experience represents the highest cognitive layer, where memory mechanisms compress redundant trajectories into transferable heuristic wisdom through cross-trajectory abstraction. Based on the form of experience representation, we categorize this stage into three types.
 
 ## 📜 PaperList
 ### 💾 Storage
