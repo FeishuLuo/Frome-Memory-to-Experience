@@ -58,6 +58,21 @@ The Reflection stage transforms memory from passive recording to active evaluati
 
 🌟 **Experience**
 Experience represents the highest cognitive layer, where memory mechanisms compress redundant trajectories into transferable heuristic wisdom through cross-trajectory abstraction. Based on the form of experience representation, we categorize this stage into three types.
+1. **Explicit**  
+     - **Characteristics：** Explicit experience extracts human-readable, comprehensible, and editable patterns from trajectory clusters.  
+     - **Primary Research Directions:** Crystallizing implicit intuition into natural language heuristic guidelines, and encapsulating recurring behavioral patterns into executable procedural primitives.  
+     - **Advantages:** Highly interpretable and editable, enabling transparent self-evolution.  
+     - **Limitations:** Lacks precision in complex decision boundaries and is prone to conflicting experiences.
+2. **Implicit**  
+     - **Characteristics：** Implicit experience internalizes interaction histories into model parameters or latent variables.  
+     - **Primary Research Directions:** Parameter internalization through fine-tuning techniques that embed trajectory distributions into network weights, and latent modulation that encodes experience into hidden-layer variables dynamically invoked during inference.  
+     - **Advantages:** Extremely low retrieval overhead and near-intuitive instantaneous experience.  
+     - **Limitations:** Reduced interpretability, high update costs, and the risk of catastrophic forgetting.
+3. **Hybrid**
+     - **Characteristics：** Hybrid experience establishes a dynamic "accumulate–internalize" cycle, treating explicit experience as a high-capacity cache that is periodically compressed and transferred into implicit model weights.  
+     - **Primary Research Directions:** Experience transfer mechanisms that progressively internalize explicit knowledge repositories through gradient-based updates, combining the interpretability benefits of explicit storage with the efficiency of parameter internalization. 
+     - **Advantages:** Balances interpretability with inference efficiency and restricts unbounded memory growth.  
+     - **Limitations:** Requires coordination of accumulation and internalization cycles and control of transfer criteria, with potential knowledge degradation during conversion.
 
 ## 📜 PaperList
 ### 💾 Storage
