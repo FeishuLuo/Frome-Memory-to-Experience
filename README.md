@@ -74,9 +74,456 @@ Experience represents the highest cognitive layer, where memory mechanisms compr
      - **Advantages:** Balances interpretability with inference efficiency and restricts unbounded memory growth.  
      - **Limitations:** Requires coordination of accumulation and internalization cycles and control of transfer criteria, with potential knowledge degradation during conversion.
 
-## 📜 PaperList
+## 📜 Paper List
+
 ### 💾 Storage
+
+#### Linear
+
+##### Context Window Adaptation
+
+- [Parallel Context Windows for Large Language Models](https://arxiv.org/abs/2212.10947) (2022) `*ACL`
+
+    > Extends context-window memory by reusing positional encodings across parallel windows, enabling much longer usable context without retraining.
+
+- [Efficient Streaming Language Models with Attention Sinks](https://arxiv.org/abs/2309.17453) (2023) `Arxiv`
+
+    > Improves streaming memory by preserving “attention sink” tokens in the KV cache so unbounded streams still retain early context.
+
+- [LLM Maybe LongLM: Self-Extend LLM Context Window Without Tuning](https://arxiv.org/abs/2401.01325) (2024) `Arxiv`
+
+    > Extends effective memory span at inference time via bi-level attention, enabling long-context use without any extra training.
+
+##### Information Sparsification
+
+- [H2O: Heavy-Hitter Oracle for Efficient Generative Inference of Large Language Models](https://arxiv.org/abs/2306.14048) (2023) `Arxiv`
+
+    > Models long-context memory as cache management, retaining only heavy-hitter tokens in the KV cache while safely evicting redundant history.
+
+- [Quest: Query-Aware Sparsity for Efficient Long-Context LLM Inference](https://arxiv.org/abs/2406.10774) (2024) `Arxiv`
+
+    > Improves memory reading by using query-aware sparse attention to select only the most relevant KV pages for long contexts.
+
+- [LLMLingua: Compressing Prompts for Accelerated Inference of Large Language Models](https://arxiv.org/abs/2310.05736) (2023) `*EMNLP`
+
+    > Treats context as compressible memory, learning to shrink prompts so more conversational history fits into a fixed-length window.
+
+- [InfLLM: Training-Free Long-Context Extrapolation for LLMs with an Efficient Context Memory](https://arxiv.org/abs/2402.04617) (2024) `*NeurIPS`
+
+    > Augments LLMs with an external context memory that retrieves only relevant long-range segments, enabling million-token usage without retraining.
+
+---
+
+#### Vector
+
+##### Semantic Retrieval
+
+- [Enhancing LLM Intelligence with ARM-RAG: Auxiliary Rationale Memory for Retrieval Augmented Generation](https://arxiv.org/abs/2311.04177) (2023) `Arxiv`
+
+    > Augments retrieval memory with stored chains-of-thought, letting RAG systems retrieve not only facts but also successful reasoning traces.
+
+- [MemLong: Memory-Augmented Retrieval for Long Text Modeling](https://arxiv.org/abs/2408.16967) (2024) `Arxiv`
+
+    > Couples an external retrieval memory with a decoder-only LM so long documents are modeled via retrieved historical segments instead of full attention.
+
+- [Larimar: Large Language Models with Episodic Memory Control](https://arxiv.org/abs/2403.11901) (2024) `Arxiv`
+
+    > Adds a brain-inspired episodic memory layer that can insert, edit, and forget facts, enabling dynamic control over what the model remembers.
+
+##### Weighted Retrieval
+
+- [MemoryBank: Enhancing Large Language Models with Long-Term Memory](https://arxiv.org/abs/2305.10250) (2023) `Arxiv`
+
+    > Builds a long-term memory bank that weights and decays user memories over time, mimicking human forgetting to keep dialog history relevant.
+
+- [Generative Agents: Interactive Simulacra of Human Behavior](https://arxiv.org/abs/2304.03442) (2023) `*UIST`
+
+    > Introduces an agent architecture that stores, weights, and aggregates episodic memories to drive believable long-term social behavior.
+
+---
+
+#### Structured
+
+##### Tabular Database
+
+- [ChatDB: Augmenting LLMs with Databases as Their Symbolic Memory](https://arxiv.org/abs/2306.03901) (2023) `Arxiv`
+
+    > Treats SQL databases as symbolic long-term memory, letting LLMs issue read–write queries to store and retrieve precise structured facts.
+
+- [DB-GPT: Empowering Database Interactions with Private Large Language Models](https://arxiv.org/abs/2312.17449) (2023) `Arxiv`
+
+    > Engineers a private LLM + DB stack where retrieval-augmented agents use databases as secure, domain-specific memory stores.
+
+- [Training a Team of Language Models as Options to Build an SQL-Based Memory](#) (2025) `*Applied Sciences`
+
+    > Organizes multiple LMs as options whose experiences are consolidated into an SQL-backed memory for later reuse.
+
+##### Tiered Architectures
+
+- [MemGPT: Towards LLMs as Operating Systems](https://arxiv.org/abs/2310.08560) (2023) `Arxiv`
+
+    > Frames the LLM as an OS kernel with tiered memory (short-term, long-term, external tools) and explicit read–write operations.
+
+- [MemoChat: Tuning LLMs to Use Memos for Consistent Long-Range Open-Domain Conversation](https://arxiv.org/abs/2308.08239) (2023) `Arxiv`
+
+    > Fine-tunes chat models to write and consult memo entries, turning conversation history into structured long-term memory.
+
+- [MemOS: A Memory OS for AI System](https://arxiv.org/abs/2507.03724) (2025) `Arxiv`
+
+    > Proposes an operating-system-like abstraction for scheduling, sharing, and garbage-collecting memories across AI components.
+
+- [SwiftSage: A Generative Agent with Fast and Slow Thinking for Complex Interactive Tasks](https://arxiv.org/abs/2305.17390) (2023) `Arxiv`
+
+    > Combines fast heuristic responses with slow reflective reasoning, supported by explicit memory to carry knowledge across interactions.
+
+- [RecurrentGPT: Interactive Generation of (Arbitrarily) Long Text](https://arxiv.org/abs/2305.13304) (2023) `Arxiv`
+
+    > Wraps an LLM in a recurrent loop that summarizes and stores past content, effectively creating a rolling external memory for arbitrarily long text.
+
+##### Semantic Graphs
+
+- [MemLLM: Finetuning LLMs to Use an Explicit Read-Write Memory](https://arxiv.org/abs/2404.11672) (2024) `Arxiv`
+
+    > Finetunes LLMs to interact with explicit key–value memory slots, learning when and how to read and write external memories.
+
+- [AriGraph: Learning Knowledge Graph World Models with Episodic Memory for LLM Agents](https://arxiv.org/abs/2407.04363) (2024) `*IJCAI`
+
+    > Builds a knowledge-graph world model augmented with episodic memory so agents can reason over temporally grounded graph states.
+
+- [GraphReader: Building Graph-based Agent to Enhance Long-Context Abilities of Large Language Models](https://arxiv.org/abs/2406.14550) (2024) `*EMNLP`
+
+    > Represents long contexts as graphs and lets agents traverse them, turning unstructured history into structured graph memory.
+
+---
+
 ### 🧠 Reflection
+
+#### Introspection
+
+##### Error Rectification
+
+- [Reflexion: Language Agents with Verbal Reinforcement Learning](https://arxiv.org/abs/2303.11366) (2023) `*NeurIPS`
+
+    > Introduces verbal self-reflection as a memory update signal, storing critiques of past failures to guide future reasoning.
+
+- [Think-in-Memory: Recalling and Post-Thinking Enable LLMs with Long-Term Memory](https://arxiv.org/abs/2311.08719) (2023) `Arxiv`
+
+    > Proposes a recall-then-think loop where agents first retrieve long-term memories and then refine them via post-hoc reasoning.
+
+- [Constructing Coherent Spatial Memory in LLM Agents through Graph Rectification](https://arxiv.org/abs/2510.04195) (2025) `Arxiv`
+
+    > Builds coherent spatial memory by rectifying graph-structured observations, enabling consistent maps over long agent trajectories.
+
+- [Enhancing LLM Planning Capabilities through Intrinsic Self-Critique](#) (2025) `Arxiv`
+
+    > Uses intrinsic self-critique to continually rewrite planning memories, refining multi-step strategies over time.
+
+##### Dynamic Maintenance
+
+- [Zep: A Temporal Knowledge Graph Architecture for Agent Memory](https://arxiv.org/abs/2501.13956) (2025) `Arxiv`
+
+    > Organizes memories as a temporal knowledge graph so agents can query facts along time and causal axes.
+
+- [Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory](https://arxiv.org/abs/2504.19413) (2025) `Arxiv`
+
+    > Provides a production-oriented long-term memory layer with pluggable storage, retrieval, and decay policies for agents.
+
+- [CAMA: A Constructivist View of Agentic Memory for LLM-Based Reading Comprehension](https://arxiv.org/abs/2510.05520) (2025) `Arxiv`
+
+    > Treats reading as constructing memory structures, incrementally building and updating comprehension memories over a document.
+
+- [Memory OS of AI Agent](https://arxiv.org/abs/2506.06326) (2025) `Arxiv`
+
+    > Envisions a unified memory OS that coordinates allocation, isolation, and sharing of memories across tasks and tools.
+
+- [Mem1: Learning to Synergize Memory and Reasoning for Efficient Long-Horizon Agents](https://arxiv.org/abs/2506.15841) (2025) `Arxiv`
+
+    > Jointly learns when to read/write memory and how to reason, optimizing the synergy between memory operations and planning.
+
+##### Knowledge Compression
+
+- [MemOrb: A Plug-and-Play Verbal-Reinforcement Memory Layer for E-Commerce Customer Service](https://arxiv.org/abs/2509.18713) (2025) `Arxiv`
+
+    > Adds a reinforcement-shaped memory layer that selectively keeps customer interaction snippets most useful for future service.
+
+- [LEGOMem: Modular Procedural Memory for Multi-Agent LLM Systems for Workflow Automation](https://arxiv.org/abs/2510.04851) (2025) `Arxiv`
+
+    > Decomposes workflow experience into modular procedural memory blocks that agents can recombine like LEGO.
+
+- [AgentFold: Long-Horizon Web Agents with Proactive Context Management](https://arxiv.org/abs/2510.24699) (2025) `Arxiv`
+
+    > Proposes proactive folding and unfolding of context, compressing working memory while preserving key decision traces.
+
+- [Coarse-to-Fine Grounded Memory for LLM Agent Planning](https://arxiv.org/abs/2508.15305) (2025) `Arxiv`
+
+    > Organizes memories in a coarse-to-fine hierarchy so high-level plans can be grounded into detailed stateful traces.
+
+- [Scaling Long-Horizon LLM Agent via Context-Folding](https://arxiv.org/abs/2510.11967) (2025) `Arxiv`
+
+    > Scales long-horizon behavior by folding past context into compact summaries and unfolding it only when needed.
+
+- [DeepAgent: A General Reasoning Agent with Scalable Toolsets](https://arxiv.org/abs/2510.21618) (2025) `Arxiv`
+
+    > Maintains multi-level memories about tools, tasks, and outcomes to support general-purpose reasoning across domains.
+
+---
+
+#### Environment
+
+##### Environment Modeling
+
+- [DEAL: Enhancing Agent Learning through World Dynamics Modeling](https://arxiv.org/abs/2407.17695) (2024) `Arxiv`
+
+    > Treats world models themselves as memory, learning dynamics that let agents store and reuse environment knowledge over long horizons.
+
+- [ToolMem: Enhancing Multimodal Agents with Learnable Tool Capability Memory](https://arxiv.org/abs/2510.06664) (2025) `Arxiv`
+
+    > Builds a dedicated memory of tool capabilities so agents remember which tools worked best in which multimodal contexts.
+
+- [CLIN: A Continually Learning Language Agent for Rapid Task Adaptation and Generalization](https://arxiv.org/abs/2310.10134) (2023) `Arxiv`
+
+    > Maintains and updates experience memories to support continual learning and fast adaptation to new tasks.
+
+- [Preference-Aware Memory Update for Long-Term LLM Agents](https://arxiv.org/abs/2510.09720) (2025) `Arxiv`
+
+    > Updates memory with an explicit model of user preferences, prioritizing storage of preference-relevant events.
+
+- [Explicit Memory Learning with Expectation Maximization](#) (2024) `*EMNLP`
+
+    > Applies an EM framework to decide which experiences become explicit memories and which should be pruned.
+
+##### Decision Optimization
+
+- [Memory-R1: Enhancing Large Language Model Agents to Manage and Utilize Memories via Reinforcement Learning](https://arxiv.org/abs/2508.19828) (2025) `Arxiv`
+
+    > Optimizes memory management policies with RL, learning when to write, erase, and consult memories for better decisions.
+
+- [Memory-Driven Self-Improvement for Decision Making with Large Language Models](https://arxiv.org/abs/2509.26340) (2025) `Arxiv`
+
+    > Uses accumulated memory of past decisions to drive self-improvement, revising policies based on long-term outcomes.
+
+- [Self-Goal: Your Language Agents Already Know How to Achieve High-Level Goals](https://arxiv.org/abs/2406.04784) (2024) `Arxiv`
+
+    > Shows that with suitable memory and planning, LLM agents can decompose and pursue high-level goals over extended interactions.
+
+---
+
+#### Coordination
+
+##### Multi-dimensional Calibration
+
+- [MIRIX: Multi-Agent Memory System for LLM-Based Agents](https://arxiv.org/abs/2507.07957) (2025) `Arxiv`
+
+    > Designs shared and private memory spaces for multi-agent systems, enabling both coordinated and personalized behaviors.
+
+- [GraphCoGent: Mitigating LLMs' Working Memory Constraints via Multi-Agent Collaboration in Complex Graph Understanding](#) (2025) `Arxiv`
+
+    > Splits complex graph memory across collaborating agents, each holding partial views that together reconstruct the full structure.
+
+- [Reflective Multi-Agent Collaboration Based on Large Language Models](#) (2024) `*NeurIPS`
+
+    > Adds collective reflection and shared memory updates so teams of agents can learn from past collaborations.
+
+- [Narrative Memory in Machines: Multi-Agent Arc Extraction in Serialized TV](https://arxiv.org/abs/2508.07010) (2025) `Arxiv`
+
+    > Builds narrative memories of characters and story arcs from long TV scripts using cooperating agents.
+
+- [MAR: Multi-Agent Reflexion Improves Reasoning Abilities in LLMs](#) (2025) `Arxiv`
+
+    > Extends Reflexion to multi-agent settings, where agents share reflective memories to collectively enhance reasoning.
+
+---
+
 ### 🌟 Experience
+
+#### Explicit
+
+##### Heuristic Guidelines
+
+- [FLEX: Continuous Agent Evolution via Forward Learning from Experience](#) (2025) `Arxiv`
+
+    > Treats experience as forward-progress memory, continuously extracting and reusing heuristics from past tasks.
+
+- [ArcMemo: Abstract Reasoning Composition with Lifelong LLM Memory](https://arxiv.org/abs/2509.04439) (2025) `Arxiv`
+
+    > Leverages a lifelong memory of abstract reasoning patterns that can be composed to solve new problems.
+
+- [LightMem: Lightweight and Efficient Memory-Augmented Generation](https://arxiv.org/abs/2510.18866) (2025) `Arxiv`
+
+    > Proposes a lightweight memory module that cheaply injects retrieved context into generation for long sequences.
+
+- [ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory](https://arxiv.org/abs/2509.25140) (2025) `Arxiv`
+
+    > Constructs a bank of high-quality reasoning traces that agents can query as reusable experience.
+
+- [Dynamic Cheatsheet: Test-Time Learning with Adaptive Memory](https://arxiv.org/abs/2504.07952) (2025) `Arxiv`
+
+    > Organizes important facts encountered at test time into an adaptive “cheatsheet” memory for rapid reuse.
+
+- [SEDM: Scalable Self-Evolving Distributed Memory for Agents](https://arxiv.org/abs/2509.09498) (2025) `Arxiv`
+
+    > Introduces a distributed memory architecture where agents share and evolve experiences across nodes.
+
+- [Learning from Supervision with Semantic and Episodic Memory: A Reflective Approach to Agent Adaptation](https://arxiv.org/abs/2510.19897) (2025) `Arxiv`
+
+    > Combines semantic and episodic memory to reinterpret supervision, improving how agents adapt to new data.
+
+- [G-Memory: Tracing Hierarchical Memory for Multi-Agent Systems](https://arxiv.org/abs/2506.07398) (2025) `Arxiv`
+
+    > Traces memory at multiple hierarchy levels, from local agent views to global team state, for multi-agent systems.
+
+- [Agent KB: Leveraging Cross-Domain Experience for Agentic Problem Solving](https://arxiv.org/abs/2507.06229) (2025) `Arxiv`
+
+    > Builds a cross-domain knowledge base of agent experiences that can be transferred to new tasks.
+
+- [SWE-Exp: Experience-Driven Software Issue Resolution](https://arxiv.org/abs/2507.23361) (2025) `Arxiv`
+
+    > Stores past bug-fix trajectories as experience memory to guide future software issue resolution.
+
+- [Remember Me, Refine Me: A Dynamic Procedural Memory Framework for Experience-Driven Agent Evolution](#) (2025) `Arxiv`
+
+    > Maintains procedural memories that are continually refined as agents gain new experience.
+
+- [LoongFlow: Directed Evolutionary Search via a Cognitive Plan-Execute-Summarize Paradigm](#) (2025) `Arxiv`
+
+    > Uses a plan–execute–summarize loop to accumulate and evolve high-level experience memories over long task sequences.
+
+##### Procedural Primitives
+
+- [CASCADE: Cumulative Agentic Skill Creation through Autonomous Development and Evolution](#) (2025) `Arxiv`
+
+    > Treats skills as procedural memory primitives that are discovered, combined, and reused over time.
+
+- [Inducing Programmatic Skills for Agentic Tasks](https://arxiv.org/abs/2504.06821) (2025) `Arxiv`
+
+    > Induces program-like skills from trajectories, turning implicit experience into explicit procedural memory.
+
+- [AccelOpt: A Self-Improving LLM Agentic System for AI Accelerator Kernel Optimization](#) (2025) `Arxiv`
+
+    > Accumulates optimization attempts as memory so the agent improves AI accelerator kernels over successive runs.
+
+- [Agent Workflow Memory](https://arxiv.org/abs/2409.07429) (2024) `Arxiv`
+
+    > Explicitly represents workflows as memory objects, letting agents recall and modify multi-step procedures.
+
+- [MemP: Exploring Agent Procedural Memory](https://arxiv.org/abs/2508.06433) (2025) `Arxiv`
+
+    > Systematically studies how agents can represent, store, and use procedural memories for complex behaviors.
+
+- [PolySkill: Learning Generalizable Skills through Polymorphic Abstraction](https://arxiv.org/abs/2510.15863) (2025) `Arxiv`
+
+    > Learns polymorphic skill abstractions that act as reusable memory units across diverse tasks.
+
+- [Contextual Experience Replay for Self-Improvement of Language Agents](#) (2025) `*ACL`
+
+    > Replays past experiences in similar contexts so agents can self-improve from their own memory.
+
+- [Automated Skill Discovery for Language Agents through Exploration and Iterative Feedback](https://arxiv.org/abs/2506.04287) (2025) `Arxiv`
+
+    > Automatically discovers and stores new skills as procedural memories via exploration and feedback.
+
+- [MemEvolve: Meta-Evolution of Agent Memory Systems](#) (2025) `Arxiv`
+
+    > Explores the design space of memory systems themselves, evolving which memory mechanisms work best.
+
+- [Youtu-Agent: Scaling Agent Productivity with Automated Generation and Hybrid Policy Optimization](#) (2025) `Arxiv`
+
+    > Aggregates experiences from large-scale agent runs into memory, then optimizes policies against this experience pool.
+
+---
+
+#### Implicit
+
+##### Latent Modulation
+
+- [MemGen: Weaving Generative Latent Memory for Self-Evolving Agents](https://arxiv.org/abs/2509.24704) (2025) `Arxiv`
+
+    > Encodes experience as latent memory vectors that can be continually updated and recombined during self-evolution.
+
+- [LatentEvolve: Self-Evolving Test-Time Scaling in Latent Space](https://arxiv.org/abs/2509.24771) (2025) `Arxiv`
+
+    > Performs self-evolution in latent space, adapting the model’s implicit memory at test time without explicit context.
+
+- [Titans: Learning to Memorize at Test Time](https://arxiv.org/abs/2501.00663) (2024) `Arxiv`
+
+    > Treats memorization itself as a test-time learning problem, building task-specific memory online during inference.
+
+##### Parameter Internalization
+
+- [AgentEvolver: Towards Efficient Self-Evolving Agent System](#) (2025) `Arxiv`
+
+    > Provides a framework where accumulated experience is periodically distilled into parameters, internalizing memory.
+
+- [Agent Learning via Early Experience](https://arxiv.org/abs/2510.08558) (2025) `Arxiv`
+
+    > Highlights the role of early experiences as priors that shape long-term internalized memory in agents.
+
+- [VerlTool: Towards Holistic Agentic Reinforcement Learning with Tool Use](https://arxiv.org/abs/2509.01055) (2025) `Arxiv`
+
+    > Unifies RL and tool-use memory, so agents internalize how and when to call external tools.
+
+- [Memento No More: Coaching AI Agents to Master Multiple Tasks via Hints Internalization](https://arxiv.org/abs/2502.01562) (2025) `Arxiv`
+
+    > Internalizes human-provided hints into parameters, turning external guidance into lasting multi-task memory.
+
+- [Analyzing and Internalizing Complex Policy Documents for LLM Agents](https://arxiv.org/abs/2510.11588) (2025) `Arxiv`
+
+    > Studies how agents can parse and encode long policy documents as internal decision-making memory.
+
+- [From Correction to Mastery: Reinforced Distillation of Large Language Model Agents](https://arxiv.org/abs/2509.14257) (2025) `Arxiv`
+
+    > Uses reinforcement-guided distillation to move corrected behaviors from episodic memory into the model weights.
+
+- [Group-in-Group Policy Optimization for LLM Agent Training](https://arxiv.org/abs/2505.10978) (2025) `Arxiv`
+
+    > Structures training as nested policy groups so different experience shards can be internalized efficiently.
+
+- [Agent-R1: Training Powerful LLM Agents with End-to-End Reinforcement Learning](#) (2025) `Arxiv`
+
+    > Directly optimizes agent behavior via end-to-end RL, internalizing long-horizon experience into the base model.
+
+- [Agent Lightning: Train Any AI Agents with Reinforcement Learning](https://arxiv.org/abs/2508.03680) (2025) `Arxiv`
+
+    > Offers a generic RL training stack that turns experience trajectories into parametric agent memory.
+
+- [Internalizing World Models via Self-Play Finetuning for Agentic RL](https://arxiv.org/abs/2510.15047) (2025) `Arxiv`
+
+    > Uses self-play finetuning to internalize world models, shifting environment knowledge from external logs into parameters.
+
+- [Rethinking Expert Trajectory Utilization in LLM Post-Training](#) (2025) `Arxiv`
+
+    > Reexamines how expert trajectories should be used so that their information becomes robust internal memory.
+
+- [Guided Self-Evolving LLMs with Minimal Human Supervision](#) (2025) `Arxiv`
+
+    > Lets LLMs self-evolve with sparse guidance, gradually folding external experience back into the model weights.
+
+- [End-to-End Test-Time Training for Long Context](#) (2025) `Arxiv`
+
+    > Adapts models at test time on long-context tasks, turning fresh interaction data into immediate internal memory updates.
+
+- [AgentRefine: Enhancing Agent Generalization through Refinement Tuning](https://arxiv.org/abs/2501.01702) (2025) `Arxiv`
+
+    > Refines agent parameters using feedback from diverse tasks, consolidating experience into more general internal memory.
+
+---
+
+#### Hybrid
+
+##### Experience Transfer
+
+- [EvolveR: Self-Evolving LLM Agents through an Experience-Driven Lifecycle](https://arxiv.org/abs/2510.16079) (2025) `Arxiv`
+
+    > Structures agents around an experience-driven lifecycle where memories are collected, abstracted, and internalized in cycles.
+
+- [Exploratory Memory-Augmented LLM Agent via Hybrid On- and Off-Policy Optimization](#) (2025) `Under Review`
+
+    > Combines on- and off-policy RL to update both policy and memory, leveraging stored trajectories more fully.
+
+- [ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory](https://arxiv.org/abs/2509.25140) (2025) `Arxiv` *(also listed under Heuristic Guidelines)*
+
+    > Treats stored reasoning traces as a scalable bank of experience that powers self-evolving agents.
+
+---
 
 ##
